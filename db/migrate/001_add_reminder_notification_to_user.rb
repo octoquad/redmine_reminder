@@ -1,4 +1,4 @@
-class AddReminderNotificationToUser < ActiveRecord::Migration
+class AddReminderNotificationToUser < ActiveRecord::Migration[5.0]
   def self.up
     c = CustomField.create({:name => 'reminder_subscription', :field_format => 'bool', :editable => true})
     c.type = 'UserCustomField'

@@ -1,4 +1,4 @@
-class ChangeToUserPreferences < ActiveRecord::Migration
+class ChangeToUserPreferences < ActiveRecord::Migration[5.0]
   def self.up
     CustomField.find_by_name_and_type('Ticket-reminder Subscription', 'UserCustomField').destroy
     add_column :user_preferences, :subscribe_to_reminder, :boolean, :default => false
